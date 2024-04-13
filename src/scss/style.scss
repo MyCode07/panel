@@ -49,23 +49,20 @@
 // load grid
 @import "parts/grid";
 
+// load section
+@import "parts/section";
+
 // load hero
 @import "parts/hero";
 
 // load section
-@import "parts/section";
-
-// load section
 @import "parts/cards";
-
-// load sliders
-@import "parts/sliders";
 
 // load form
 @import "common/form";
 
-// load catalog
-@import "parts/catalog";
+// load table
+@import "parts/table";
 
 
 .pages {

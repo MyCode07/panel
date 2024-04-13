@@ -3,6 +3,7 @@
     color: $white;
     padding-top: 90px;
     padding-bottom: 325px;
+    @include adaptive-value("margin-bottom", 80, 40, 1);
 
     @media (max-width: 768px) {
         padding-top: 35px;
@@ -63,5 +64,17 @@
     }
 
     ._btn {
+    }
+}
+
+._desctop {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+._mobile {
+    @media (min-width: 769px) {
+        display: none;
     }
 }

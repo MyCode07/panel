@@ -15,7 +15,9 @@
         padding: 15px 0;
         background-color: $white;
 
-        .grid {
+        // .header__top-flex
+
+        &-flex {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
 
