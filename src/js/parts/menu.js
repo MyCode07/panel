@@ -4,16 +4,13 @@ import { gsap } from 'gsap'
 
 
 const burger = document.querySelector('.header__burger');
-const header = document.querySelector('.header');
 const menu = document.querySelector('.menu');
-const allMenuLinks = document.querySelectorAll('ul li a');
+const allMenuLinks = document.querySelectorAll('nav ul li a');
 
 if (burger) {
     burger.addEventListener('click', (e) => {
         burger.classList.toggle('_active');
-        header.classList.toggle('_active');
         menu.classList.toggle('_open');
-        document.body.classList.toggle('_noscroll');
 
         if (menu.classList.contains('_open')) {
             lockPadding();
@@ -21,8 +18,31 @@ if (burger) {
         else {
             unLockPadding();
         }
+
+        if (searchPopup.classList.contains('_open')) {
+            searchPopup.classList.remove('_open')
+        }
+        if (catalogMenu.classList.contains('_open')) {
+            catalogMenu.classList.remove('_open')
+            openCatalogBtns.forEach(btn => {
+                btn.classList.remove('_active');
+            })
+        }
     })
 }
+
+
+if (allMenuLinks.length) {
+    allMenuLinks.forEach(link => {
+        link.addEventListener('click', (е) => {
+            if (menu.classList.contains('_open')) {
+                menu.classList.remove('_open');
+                unLockPadding();
+            }
+        })
+    })
+}
+
 
 // menu arrow buttom
 const arrow = `<button><svg width="14" height="14" viewBox="0 0 14 14">
@@ -85,28 +105,6 @@ if (submenuList.length) {
 
 
 
-function aniamteDropDown(dropDown, type = 'show') {
-    if (type == 'show') {
-        gsap.to(dropDown, {
-            height: 'auto',
-        })
-
-        gsap.to(dropDown.querySelectorAll('li'), {
-            y: 0,
-            stagger: 0.1
-        })
-    }
-    else {
-        gsap.to(dropDown, {
-            height: 0,
-        })
-
-        gsap.to(dropDown.querySelectorAll('li'), {
-            y: '20%',
-            stagger: 0.1
-        })
-    }
-}
 
 const openCatalogBtns = document.querySelectorAll('[data-open-catalog]');
 const catalogMenu = document.querySelector('.catalog-menu')
@@ -117,7 +115,6 @@ if (openCatalogBtns.length) {
             e.preventDefault();
             catalogMenu.classList.toggle('_open');
             btn.classList.toggle('_active');
-            header.classList.toggle('_active');
 
             if (btn.classList.contains('_active')) {
                 lockPadding();
@@ -125,33 +122,64 @@ if (openCatalogBtns.length) {
             else {
                 unLockPadding();
             }
+
+            if (searchPopup.classList.contains('_open')) {
+                searchPopup.classList.remove('_open')
+            }
+            if (menu.classList.contains('_open')) {
+                menu.classList.remove('_open')
+                burger.classList.remove('_active');
+            }
         })
     })
 }
 
+const openSearchBtn = document.querySelectorAll('[data-open-search]');
+const searchPopup = document.querySelector('.search-popup')
 
-const openServicesBtn = document.querySelector('.services-link');
-if (openCatalogBtns) {
-    openServicesBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openServicesBtn.classList.toggle('_active');
-        header.classList.toggle('_active');
+if (openSearchBtn.length) {
+    openSearchBtn.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchPopup.classList.toggle('_open');
+            btn.classList.toggle('_active');
 
-        if (openServicesBtn.classList.contains('_active')) {
-            lockPadding();
-        }
-        else {
-            unLockPadding();
-        }
+            if (btn.classList.contains('_active')) {
+                lockPadding();
+            }
+            else {
+                unLockPadding();
+            }
+
+            if (catalogMenu.classList.contains('_open')) {
+                catalogMenu.classList.remove('_open')
+                openCatalogBtns.forEach(btn => {
+                    btn.classList.remove('_active');
+                })
+            }
+            if (menu.classList.contains('_open')) {
+                menu.classList.remove('_open')
+                burger.classList.remove('_active');
+            }
+        })
     })
 }
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
 
-    if ((!targetEl.classList.contains('services-link') && !targetEl.closest('.services-link') && !targetEl.closest('[data-open-catalog]')) && openServicesBtn.classList.contains('_active')) {
-        openServicesBtn.classList.remove('_active');
-        header.classList.remove('_active');
+    if (!targetEl.hasAttribute('data-open-catalog') && !targetEl.closest('.catalog-menu') &&
+        !targetEl.classList.contains('catalog-menu') && catalogMenu.classList.contains('_open')) {
+        catalogMenu.classList.remove('_open');
+        unLockPadding();
+
+        openCatalogBtns.forEach(btn => {
+            btn.classList.remove('_active');
+        })
+    }
+
+    if (targetEl.classList.contains('search-popup__close')) {
+        searchPopup.classList.remove('_open');
         unLockPadding();
     }
 })

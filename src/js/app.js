@@ -8,8 +8,8 @@ import { maskInputs } from "./static/inputmask.js";
 import "./parts/input-hover.js";
 
 // import "./parts/sliders.js";
-// import "./parts/popup.js";
-// import "./parts/menu.js";
+import "./parts/popup.js";
+ import "./parts/menu.js";
 // import "./parts/tabs.js";
 // import "./parts/service-image-hover.js";
 // accorden();

@@ -95,6 +95,11 @@
                 font-size: 20px;
                 font-weight: 700;
             }
+
+            button{
+                padding: 14px 20px;
+                border-radius: 5px;
+            }
         }
     }
 
@@ -255,6 +260,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            pointer-events: none;
 
             &:after {
                 content: "";
@@ -263,6 +269,7 @@
                 width: 1em;
                 height: 1em;
                 flex: 0 0 auto;
+                pointer-events: none;
 
                 background-image: url("@img/icons/catalog.svg");
                 background-repeat: no-repeat;
@@ -279,6 +286,10 @@
             height: 100%;
             background-color: $accent;
         }
+
+        &._active span:after {
+            background-image: url("@img/icons/close.svg");
+        }
     }
 
     // .header__search
@@ -288,6 +299,7 @@
             width: 20px;
             height: 20px;
             stroke: currentColor;
+            pointer-events: none;
         }
     }
 }
