@@ -96,7 +96,7 @@
                 font-weight: 700;
             }
 
-            button{
+            button {
                 padding: 14px 20px;
                 border-radius: 5px;
             }
@@ -285,10 +285,24 @@
             width: 50vw;
             height: 100%;
             background-color: $accent;
+
+            transition: background-color 0.3s ease 0s;
         }
 
-        &._active span:after {
-            background-image: url("@img/icons/close.svg");
+        @media (any-hover: hover) {
+            &:hover:before {
+                background-color: #641a0b;
+            }
+        }
+
+        &._active {
+            span:after {
+                background-image: url("@img/icons/close.svg");
+            }
+
+            &:before {
+                background-color: #641a0b;
+            }
         }
     }
 

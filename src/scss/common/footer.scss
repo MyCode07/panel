@@ -111,6 +111,14 @@
                 a {
                     font-size: 15px;
                     color: $gray;
+
+                    transition: color 0.3s ease 0s;
+
+                    @media (any-hover: hover) {
+                        &:hover {
+                            color: $white;
+                        }
+                    }
                 }
             }
         }
@@ -227,11 +235,22 @@
                 width: 100%;
             }
 
-            svg,img {
+            svg,
+            img {
                 width: 20px;
 
                 @media (max-width: 768px) {
                     width: 18px;
+                }
+            }
+        }
+
+        a {
+            transition: color 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $white;
                 }
             }
         }

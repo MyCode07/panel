@@ -220,6 +220,10 @@
                 span {
                     color: $accent;
                 }
+
+                .img:before {
+                    opacity: 1;
+                }
             }
         }
 
@@ -243,6 +247,20 @@
 
             @media (max-width: 768px) {
                 padding-bottom: 57%;
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: $accent, $alpha: 0.5);
+                opacity: 0;
+                transition: opacity 0.3s ease 0s;
+                pointer-events: none;
+                z-index: 1;
             }
         }
 

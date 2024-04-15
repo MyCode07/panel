@@ -95,6 +95,14 @@
             max-width: none;
         }
 
+        transition:  background-color 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #641a0b;
+            }
+        }
+
         h3 {
             @include adaptive-value("font-size", 20, 18, 1);
         }

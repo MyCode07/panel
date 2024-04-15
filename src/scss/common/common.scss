@@ -97,6 +97,14 @@ button {
     }
 }
 
+a {
+    @media (any-hover: hover) {
+        &:hover {
+            color: $accent;
+        }
+    }
+}
+
 ._socials {
     display: flex;
     align-items: center;
@@ -116,11 +124,32 @@ button {
         border: 1px solid rgba($color: $gray, $alpha: 0.5);
         border-radius: 50%;
 
+        transition: background-color 0.3s ease 0s;
+
         img,
         svg {
             width: 50%;
             flex: 0 0 auto;
             fill: $black;
+
+            transition: fill 0.3s ease 0s;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                img,
+                svg {
+                    fill: $white;
+                }
+
+                &.wa {
+                    background-color: #4caf50;
+                }
+
+                &.tg {
+                    background-color: #24b8e6;
+                }
+            }
         }
     }
 }
@@ -135,6 +164,8 @@ button {
 
     color: $accent;
 
+    transition: all 0.3s ease 0s;
+
     @media (max-width: 768px) {
         padding: 18px;
     }
@@ -143,6 +174,13 @@ button {
 
     &-border {
         border: 1px solid currentColor;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $accent;
+                color: $white;
+            }
+        }
     }
 
     // ._btn-accent
@@ -150,10 +188,23 @@ button {
     &-accent {
         background-color: $accent;
         color: $white;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #641a0b;
+            }
+        }
     }
 
     &._border-white {
         color: $white;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $white;
+                color: $accent;
+            }
+        }
     }
 }
 
