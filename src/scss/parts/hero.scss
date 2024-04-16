@@ -79,3 +79,17 @@
         display: none;
     }
 }
+
+picture {
+    &:has(._desctop) {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &:has(._mobile) {
+        @media (min-width: 769px) {
+            display: none;
+        }
+    }
+}

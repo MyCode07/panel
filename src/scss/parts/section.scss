@@ -36,6 +36,11 @@
             @media (max-width: 768px) {
                 width: 40px;
             }
+
+            img,
+            picture {
+                height: auto;
+            }
         }
     }
 }
@@ -225,6 +230,10 @@
                     opacity: 1;
                 }
             }
+        }
+
+        &:before {
+            display: none;
         }
 
         .img {
