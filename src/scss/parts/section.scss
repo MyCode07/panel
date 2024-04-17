@@ -431,3 +431,38 @@
         margin-inline: auto;
     }
 }
+
+.search-results {
+    // search-results__items
+
+    &__items {
+        & > :not(:last-child) {
+            margin-bottom: 1em;
+        }
+
+        a {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            & > :first-child {
+                @include adaptive-value("font-size", 20, 16, 1);
+            }
+
+            & > :last-child {
+                @include adaptive-value("font-size", 16, 12, 1);
+            }
+        }
+    }
+
+    .empty {
+        @include adaptive-value("font-size", 20, 16, 1);
+
+        span {
+            color: #802a18;
+            font-weight: 600;
+        }
+    }
+}

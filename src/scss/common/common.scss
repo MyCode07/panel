@@ -361,3 +361,62 @@ a {
         font-size: 14px;
     }
 }
+
+._underline {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+
+    &:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        content: "";
+        animation: border-bottom-in 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        background-color: rgba($color: $black, $alpha: 0.1);
+        animation-fill-mode: forwards;
+    }
+
+    &:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        content: "";
+        animation: border-bottom-out 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+        background-color: rgba($color: $black, $alpha: 1);
+        animation-fill-mode: forwards;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            &:after {
+                animation: border-bottom-in 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    @keyframes border-bottom-out {
+        0% {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(101%);
+        }
+    }
+
+    @keyframes border-bottom-in {
+        0% {
+            transform: translateX(-101%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+}
