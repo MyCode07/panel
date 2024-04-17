@@ -466,3 +466,13 @@
         }
     }
 }
+
+.photo-gallery:has(button._more) {
+    &:not(._active) {
+        .grid {
+            & > :nth-child(n + 7) {
+                display: none;
+            }
+        }
+    }
+}

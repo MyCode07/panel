@@ -5,6 +5,7 @@ import { animateAction, animateStaggerAction } from "./parts/animations.js";
 import "./parts/input-hover.js";
 import "./parts/popup.js";
 import "./parts/menu.js";
+import "./parts/more-photos.js";
 
 animateAction();
 animateStaggerAction();
