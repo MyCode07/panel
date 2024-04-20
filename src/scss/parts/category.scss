@@ -155,6 +155,8 @@
         // .form__item
 
         &__item {
+            margin-bottom: 6px;
+
             input,
             textarea {
                 background-color: $white;
@@ -169,6 +171,8 @@
         // .form__button
 
         &__button {
+            margin-top: 18px;
+
             p {
                 color: $white;
             }

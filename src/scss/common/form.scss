@@ -72,21 +72,20 @@
             border: 1px solid #e9e6e6;
             border-radius: 5px;
             width: 100%;
+
+            &._active,
+            &:focus,
+            &:active {
+                + span {
+                    font-size: 11px;
+                    top: 7px;
+                }
+            }
         }
 
         textarea {
             resize: none;
             height: 110px;
-        }
-
-        input._active + span,
-        input:active + span,
-        input:focus + span,
-        textarea._active + span,
-        textarea:active + span,
-        textarea:focus + span {
-            font-size: 11px;
-            top: 7px;
         }
 
         &._error input,
