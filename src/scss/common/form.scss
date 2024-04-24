@@ -68,17 +68,18 @@
         input,
         textarea {
             height: 60px;
-            padding: 20px;
             border: 1px solid #e9e6e6;
             border-radius: 5px;
             width: 100%;
+
+            padding: 25px 20px 12px 20px;
 
             &._active,
             &:focus,
             &:active {
                 + span {
                     font-size: 11px;
-                    top: 7px;
+                    top: 10px;
                 }
             }
         }

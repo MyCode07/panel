@@ -264,17 +264,24 @@
             max-width: 150px;
         }
 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
         span {
+            pointer-events: none;
+        }
+
+        & > :first-child {
             position: relative;
             z-index: 1;
+        }
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            pointer-events: none;
-
+        & > :last-child {
+            display: block;
             &:after {
+                display: block;
                 content: "";
                 left: 0;
                 top: 0;
@@ -296,7 +303,7 @@
         }
 
         &._active {
-            span:after {
+            & > :last-child:after {
                 background-image: url("@img/icons/close.svg");
             }
 
