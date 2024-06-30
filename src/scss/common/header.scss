@@ -254,6 +254,7 @@
 
         flex: 1 1 200px;
         max-width: 200px;
+        min-height: 60px;
 
         @media (max-width: 1024px) {
             padding: 13px;
@@ -276,6 +277,7 @@
         & > :first-child {
             position: relative;
             z-index: 1;
+            line-height: 0.1;
         }
 
         & > :last-child {

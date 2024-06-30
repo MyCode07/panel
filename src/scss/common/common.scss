@@ -54,9 +54,11 @@ picture {
     display: block;
     width: 100%;
     max-width: 100%;
+    height: auto;
 }
 
 h1,
+.h1,
 h2,
 h3,
 h4,
@@ -66,7 +68,8 @@ h6 {
     line-height: 1.1;
 }
 
-h1 {
+h1,
+.h1 {
     @include adaptive-value("font-size", 40, 30, 1);
 }
 
@@ -257,7 +260,13 @@ a {
         img {
             margin-bottom: 0;
             height: auto;
+            width: auto;
         }
+    }
+
+    img {
+        height: auto;
+        width: auto;
     }
 
     ol,
@@ -293,6 +302,35 @@ a {
 
         @media (max-width: 768px) {
             font-size: 16px;
+        }
+    }
+
+    p {
+        &:has(picture) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            img,
+            picture {
+                width: auto;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (min-width: 769px) {
+            &:has(.aligncenter) {
+            }
+
+            &:has(.alignleft) {
+                margin-right: 20px;
+                float: left;
+            }
+
+            &:has(.alignright) {
+                margin-left: 20px;
+                float: right;
+            }
         }
     }
 

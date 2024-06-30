@@ -2,9 +2,11 @@ import { maskInputs } from "./static/inputmask.js";
 import { replaceDomElements } from "./static/replace.js";
 import { animateAction, animateStaggerAction } from "./parts/animations.js";
 
+import "./parts/sliders.js";
 import "./parts/popup.js";
 import "./parts/menu.js";
 import "./parts/more-photos.js";
+
 
 animateAction();
 animateStaggerAction();
@@ -14,6 +16,10 @@ maskInputs('+7 (999) 999-99-99', '._mask-phone')
 
 import { Fancybox } from "@fancyapps/ui";
 Fancybox.bind("[data-fancybox]", {
+    Carousel: {
+        Panzoom: {
+        },
+    },
 });
 
 const inputItems = [...document.querySelectorAll('input ')].concat([...document.querySelectorAll('textarea ')])
