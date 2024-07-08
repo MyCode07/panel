@@ -482,3 +482,36 @@
         }
     }
 }
+
+.variants-gallery,
+.variants-archive-page,
+._cover {
+    .img {
+        position: relative;
+        padding-bottom: 66.7%;
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+._cover {
+    &.gallery-single-page .img {
+        padding-bottom: 152%;
+
+        @media (max-width: 768px) {
+            padding-bottom: 0;
+
+            img {
+                position: relative;
+                height: auto;
+            }
+        }
+    }
+}
