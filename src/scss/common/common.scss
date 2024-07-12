@@ -317,20 +317,20 @@ a {
                 margin-bottom: 0;
             }
         }
+    }
 
-        @media (min-width: 769px) {
-            &:has(.aligncenter) {
-            }
+    @media (min-width: 769px) {
+        .aligncenter {
+        }
 
-            &:has(.alignleft) {
-                margin-right: 20px;
-                float: left;
-            }
+        .alignleft {
+            margin-right: 20px;
+            float: left;
+        }
 
-            &:has(.alignright) {
-                margin-left: 20px;
-                float: right;
-            }
+        .alignright {
+            margin-left: 20px;
+            float: right;
         }
     }
 
